@@ -19,7 +19,16 @@ def encode(string):
         new_string.append(str(i)) # Puts encoded digit into list
 
     return "".join(new_string) # Returns all list items joined together.
-
+def decode(string):
+    result = ""
+    for i in range(len(string)):
+        digit = int(string[i])
+        if digit < 3:
+            digit  = 9 - digit
+        else:
+            digit -= 3
+        result += str(digit)
+    return result
 def main():
 
     # Initialize.
@@ -34,6 +43,9 @@ def main():
             print("Your password has been encoded and stored!")
         if user_choice == '2':
             # 2. Encode
+            ot_pw = input("Please enter yor password to decode: ")
+            pw2 = decode(ot_pw)
+            print("Your password has been encoded and stored!")
             pass
         elif user_choice == '3':
             # 3. Quit
