@@ -19,7 +19,8 @@ def encode(string):
         new_string.append(str(i)) # Puts encoded digit into list
 
     return "".join(new_string) # Returns all list items joined together.
-def decode(string):
+
+def decode(string): # Bella's code
     result = ""
     for i in range(len(string)):
         digit = int(string[i])
@@ -43,10 +44,8 @@ def main():
             print("Your password has been encoded and stored!")
         if user_choice == '2':
             # 2. Encode
-            ot_pw = input("Please enter yor password to decode: ")
-            pw2 = decode(ot_pw)
-            print("Your password has been encoded and stored!")
-            pass
+            pw2 = decode(pw1)
+            print(f"The encoded password is {pw1}, and the original password is {pw2}")
         elif user_choice == '3':
             # 3. Quit
             menu_check = False
